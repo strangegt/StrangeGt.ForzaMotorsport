@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2003
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StrangeGt.ForzaMotorsport.Cli", "StrangeGt.ForzaMotorsport.Cli\StrangeGt.ForzaMotorsport.Cli.csproj", "{17B84996-506B-48FC-AC94-F939DB4FF891}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StrangeGt.ForzaMotorsport.Listener", "StrangeGt.ForzaMotorsport.Listener\StrangeGt.ForzaMotorsport.Listener.csproj", "{29E42BF0-7A16-4611-BAD7-30593E6598C6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StrangeGt.ForzaMotorsport.Data", "StrangeGt.ForzaMotorsport.Data\StrangeGt.ForzaMotorsport.Data.csproj", "{3CDC49B1-D44F-4788-9DBF-F63D6D43EF39}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{064C9BF8-6040-4621-95D8-834463174344}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{17B84996-506B-48FC-AC94-F939DB4FF891}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17B84996-506B-48FC-AC94-F939DB4FF891}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17B84996-506B-48FC-AC94-F939DB4FF891}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17B84996-506B-48FC-AC94-F939DB4FF891}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29E42BF0-7A16-4611-BAD7-30593E6598C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29E42BF0-7A16-4611-BAD7-30593E6598C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29E42BF0-7A16-4611-BAD7-30593E6598C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29E42BF0-7A16-4611-BAD7-30593E6598C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3CDC49B1-D44F-4788-9DBF-F63D6D43EF39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3CDC49B1-D44F-4788-9DBF-F63D6D43EF39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3CDC49B1-D44F-4788-9DBF-F63D6D43EF39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3CDC49B1-D44F-4788-9DBF-F63D6D43EF39}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DE31C61C-F642-4C77-8F9C-2F48A57CE432}
+	EndGlobalSection
+EndGlobal
