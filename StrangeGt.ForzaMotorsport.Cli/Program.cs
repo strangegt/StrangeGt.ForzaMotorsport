@@ -56,10 +56,10 @@ namespace StrangeGt.ForzaMotorsport.Cli
 
         private static void CreateXaml()
         {
-            var properties = typeof(UDPData).GetProperties();
-            string tpl = @"<StackLayout Orientation=""Horizontal"">
-< Label Text=""{0}:"" FontSize=""Small"" />
-<Label Text=""{{Binding Item.{0},StringFormat='{{0,20:{1}}}'}}"" FontSize=""Micro""/>
+             var properties = typeof(UDPData).GetProperties();
+            string tpl = @"<StackLayout Orientation=""Horizontal"" HorizontalOptions=""FillAndExpand"">
+< Label Text=""{0}:"" FontSize=""Small"" HorizontalOptions=""FillAndExpand"" HorizontalTextAlignment=""End""/>
+< Label Text=""{{Binding Item.{0},StringFormat='{{0:{1}}}'}}"" FontSize=""Micro"" HorizontalOptions=""FillAndExpand"" HorizontalTextAlignment=""End""/>
 </StackLayout>
 ";
             string xaml = @"<StackLayout Spacing=""20"" Padding=""15"">";
