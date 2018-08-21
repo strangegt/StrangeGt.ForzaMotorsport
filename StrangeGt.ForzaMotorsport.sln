@@ -11,6 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StrangeGt.ForzaMotorsport.D
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{064C9BF8-6040-4621-95D8-834463174344}"
 	ProjectSection(SolutionItems) = preProject
+		LICENSE = LICENSE
 		README.md = README.md
 	EndProjectSection
 EndProject
@@ -20,7 +21,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StrangeGt.ForzaMotorsport.A
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StrangeGt.ForzaMotorsport.App.UWP", "StrangeGt.ForzaMotorsport.App.UWP\StrangeGt.ForzaMotorsport.App.UWP.csproj", "{B5D88880-B583-4B47-9015-7DC4078D4C5C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StrangeGt.ForzaMotorsport.App", "StrangeGt.ForzaMotorsport.App\StrangeGt.ForzaMotorsport.App.csproj", "{0D6FB529-F7B2-433A-B7CC-956F28E77773}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StrangeGt.ForzaMotorsport.App", "StrangeGt.ForzaMotorsport.App\StrangeGt.ForzaMotorsport.App.csproj", "{0D6FB529-F7B2-433A-B7CC-956F28E77773}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
