@@ -1,0 +1,262 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="StrangeGt.ForzaMotorsport.App.Views.ItemDetailPage"
+             Title="{Binding Title}">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Start" Clicked="ToolbarItem_Clicked">
+            <ToolbarItem.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="UWP" Value="add.png"/>
+                </OnPlatform>
+            </ToolbarItem.Icon>
+        </ToolbarItem>
+        <ToolbarItem Text="Stop" Clicked="ToolbarItem_Clicked_1">
+            <ToolbarItem.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="UWP" Value="stop.png"/>
+                </OnPlatform>
+            </ToolbarItem.Icon>
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <ScrollView>
+
+            <StackLayout Spacing="20" Padding="15">
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="IsRaceOn:" FontSize="Small" />
+                    <Label Text="{Binding Item.IsRaceOn}" FontSize="Micro"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="TimestampMS:" FontSize="Small" />
+                    <Label Text="{Binding Item.TimestampMS}" FontSize="Micro"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="EngineMaxRpm:" FontSize="Small" />
+                    <Label Text="{Binding Item.EngineMaxRpm}" FontSize="Micro"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="EngineIdleRpm:" FontSize="Small" />
+                    <Label Text="{Binding Item.EngineIdleRpm}" FontSize="Micro"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="CurrentEngineRpm:" FontSize="Small" />
+                    <Label Text="{Binding Item.CurrentEngineRpm}" FontSize="Micro"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="AccelerationX:" FontSize="Small" />
+                    <Label Text="{Binding Item.AccelerationX}" FontSize="Micro"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="AccelerationY:" FontSize="Small" />
+                    <Label Text="{Binding Item.AccelerationY}" FontSize="Micro"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="AccelerationZ:" FontSize="Small" />
+                    <Label Text="{Binding Item.AccelerationZ}" FontSize="Micro"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="VelocityX:" FontSize="Small" />
+                    <Label Text="{Binding Item.VelocityX}" FontSize="Micro"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="VelocityY:" FontSize="Small" />
+                    <Label Text="{Binding Item.VelocityY}" FontSize="Micro"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="VelocityZ:" FontSize="Small" />
+                    <Label Text="{Binding Item.VelocityZ}" FontSize="Micro"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="AngularVelocityX:" FontSize="Small" />
+                    <Label Text="{Binding Item.AngularVelocityX}" FontSize="Micro"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="AngularVelocityY:" FontSize="Small" />
+                    <Label Text="{Binding Item.AngularVelocityY}" FontSize="Micro"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="AngularVelocityZ:" FontSize="Small" />
+                    <Label Text="{Binding Item.AngularVelocityZ}" FontSize="Micro"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Yaw:" FontSize="Small" />
+                    <Label Text="{Binding Item.Yaw}" FontSize="Micro"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Pitch:" FontSize="Small" />
+                    <Label Text="{Binding Item.Pitch}" FontSize="Micro"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Roll:" FontSize="Small" />
+                    <Label Text="{Binding Item.Roll}" FontSize="Micro"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="NormalizedSuspensionTravelFrontLeft:" FontSize="Small" />
+                    <Label Text="{Binding Item.NormalizedSuspensionTravelFrontLeft}" FontSize="Micro"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="NormalizedSuspensionTravelFrontRight:" FontSize="Small" />
+                    <Label Text="{Binding Item.NormalizedSuspensionTravelFrontRight}" FontSize="Micro"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="NormalizedSuspensionTravelRearLeft:" FontSize="Small" />
+                    <Label Text="{Binding Item.NormalizedSuspensionTravelRearLeft}" FontSize="Micro"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="NormalizedSuspensionTravelRearRight:" FontSize="Small" />
+                    <Label Text="{Binding Item.NormalizedSuspensionTravelRearRight}" FontSize="Micro"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="TireSlipRatioFrontLeft:" FontSize="Small" />
+                    <Label Text="{Binding Item.TireSlipRatioFrontLeft}" FontSize="Micro"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="TireSlipRatioFrontRight:" FontSize="Small" />
+                    <Label Text="{Binding Item.TireSlipRatioFrontRight}" FontSize="Micro"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="TireSlipRatioRearLeft:" FontSize="Small" />
+                    <Label Text="{Binding Item.TireSlipRatioRearLeft}" FontSize="Micro"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="TireSlipRatioRearRight:" FontSize="Small" />
+                    <Label Text="{Binding Item.TireSlipRatioRearRight}" FontSize="Micro"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="WheelRotationSpeedFrontLeft:" FontSize="Small" />
+                    <Label Text="{Binding Item.WheelRotationSpeedFrontLeft}" FontSize="Micro"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="WheelRotationSpeedFrontRight:" FontSize="Small" />
+                    <Label Text="{Binding Item.WheelRotationSpeedFrontRight}" FontSize="Micro"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="WheelRotationSpeedRearLeft:" FontSize="Small" />
+                    <Label Text="{Binding Item.WheelRotationSpeedRearLeft}" FontSize="Micro"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="WheelRotationSpeedRearRight:" FontSize="Small" />
+                    <Label Text="{Binding Item.WheelRotationSpeedRearRight}" FontSize="Micro"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="WheelOnRumbleStripFrontLeft:" FontSize="Small" />
+                    <Label Text="{Binding Item.WheelOnRumbleStripFrontLeft}" FontSize="Micro"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="WheelOnRumbleStripFrontRight:" FontSize="Small" />
+                    <Label Text="{Binding Item.WheelOnRumbleStripFrontRight}" FontSize="Micro"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="WheelOnRumbleStripRearLeft:" FontSize="Small" />
+                    <Label Text="{Binding Item.WheelOnRumbleStripRearLeft}" FontSize="Micro"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="WheelOnRumbleStripRearRight:" FontSize="Small" />
+                    <Label Text="{Binding Item.WheelOnRumbleStripRearRight}" FontSize="Micro"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="WheelInPuddleDepthFrontLeft:" FontSize="Small" />
+                    <Label Text="{Binding Item.WheelInPuddleDepthFrontLeft}" FontSize="Micro"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="WheelInPuddleDepthFrontRight:" FontSize="Small" />
+                    <Label Text="{Binding Item.WheelInPuddleDepthFrontRight}" FontSize="Micro"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="WheelInPuddleDepthRearLeft:" FontSize="Small" />
+                    <Label Text="{Binding Item.WheelInPuddleDepthRearLeft}" FontSize="Micro"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="WheelInPuddleDepthRearRight:" FontSize="Small" />
+                    <Label Text="{Binding Item.WheelInPuddleDepthRearRight}" FontSize="Micro"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="SurfaceRumbleFrontLeft:" FontSize="Small" />
+                    <Label Text="{Binding Item.SurfaceRumbleFrontLeft}" FontSize="Micro"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="SurfaceRumbleFrontRight:" FontSize="Small" />
+                    <Label Text="{Binding Item.SurfaceRumbleFrontRight}" FontSize="Micro"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="SurfaceRumbleRearLeft:" FontSize="Small" />
+                    <Label Text="{Binding Item.SurfaceRumbleRearLeft}" FontSize="Micro"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="SurfaceRumbleRearRight:" FontSize="Small" />
+                    <Label Text="{Binding Item.SurfaceRumbleRearRight}" FontSize="Micro"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="TireSlipAngleFrontLeft:" FontSize="Small" />
+                    <Label Text="{Binding Item.TireSlipAngleFrontLeft}" FontSize="Micro"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="TireSlipAngleFrontRight:" FontSize="Small" />
+                    <Label Text="{Binding Item.TireSlipAngleFrontRight}" FontSize="Micro"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="TireSlipAngleRearLeft:" FontSize="Small" />
+                    <Label Text="{Binding Item.TireSlipAngleRearLeft}" FontSize="Micro"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="TireSlipAngleRearRight:" FontSize="Small" />
+                    <Label Text="{Binding Item.TireSlipAngleRearRight}" FontSize="Micro"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="TireCombinedSlipFrontLeft:" FontSize="Small" />
+                    <Label Text="{Binding Item.TireCombinedSlipFrontLeft}" FontSize="Micro"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="TireCombinedSlipFrontRight:" FontSize="Small" />
+                    <Label Text="{Binding Item.TireCombinedSlipFrontRight}" FontSize="Micro"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="TireCombinedSlipRearLeft:" FontSize="Small" />
+                    <Label Text="{Binding Item.TireCombinedSlipRearLeft}" FontSize="Micro"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="TireCombinedSlipRearRight:" FontSize="Small" />
+                    <Label Text="{Binding Item.TireCombinedSlipRearRight}" FontSize="Micro"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="SuspensionTravelMetersFrontLeft:" FontSize="Small" />
+                    <Label Text="{Binding Item.SuspensionTravelMetersFrontLeft}" FontSize="Micro"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="SuspensionTravelMetersFrontRight:" FontSize="Small" />
+                    <Label Text="{Binding Item.SuspensionTravelMetersFrontRight}" FontSize="Micro"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="SuspensionTravelMetersRearLeft:" FontSize="Small" />
+                    <Label Text="{Binding Item.SuspensionTravelMetersRearLeft}" FontSize="Micro"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="SuspensionTravelMetersRearRight:" FontSize="Small" />
+                    <Label Text="{Binding Item.SuspensionTravelMetersRearRight}" FontSize="Micro"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="CarOrdinal:" FontSize="Small" />
+                    <Label Text="{Binding Item.CarOrdinal}" FontSize="Micro"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="CarClass:" FontSize="Small" />
+                    <Label Text="{Binding Item.CarClass}" FontSize="Micro"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="CarPerformanceIndex:" FontSize="Small" />
+                    <Label Text="{Binding Item.CarPerformanceIndex}" FontSize="Micro"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="DrivetrainType:" FontSize="Small" />
+                    <Label Text="{Binding Item.DrivetrainType}" FontSize="Micro"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="NumCylinders:" FontSize="Small" />
+                    <Label Text="{Binding Item.NumCylinders}" FontSize="Micro"/>
+                </StackLayout>
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

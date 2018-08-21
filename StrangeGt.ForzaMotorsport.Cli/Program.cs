@@ -2,6 +2,7 @@
 using StrangeGt.ForzaMotorsport.Listener;
 using System;
 using System.IO;
+using System.Reflection;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -17,8 +18,8 @@ namespace StrangeGt.ForzaMotorsport.Cli
         static void Main(string[] args)
         {
             // Console.WriteLine(string.Format("{0}", System.Runtime.InteropServices.Marshal.SizeOf(typeof(UDPData))));SQLitePCL.Batteries.Init().'
-            //SQLitePCL.Batteries.Init();
-
+            //Call this for create basic xalm
+            //CreateXaml();
             bool running = true;
             while (running)
             {
@@ -51,6 +52,20 @@ namespace StrangeGt.ForzaMotorsport.Cli
                 }
             }
         }
+
+        private static void CreateXaml()
+        {
+            var properties=typeof(UDPData).GetProperties();
+            string tpl = @"<StackLayout Orientation=""Horizontal"">
+< Label Text=""{0}:"" FontSize=""Small"" />
+<Label Text=""{{Binding Item.{0}}}"" FontSize=""Micro""/>
+</StackLayout>
+";
+              string xaml = "";
+         foreach(PropertyInfo pi in properties){
+                xaml += string.Format(tpl, pi.Name);
+            }
+         }
 
         private static void CreateDB(string databasePath)
         {
