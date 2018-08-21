@@ -19,7 +19,8 @@ namespace StrangeGt.ForzaMotorsport.Cli
         {
             // Console.WriteLine(string.Format("{0}", System.Runtime.InteropServices.Marshal.SizeOf(typeof(UDPData))));SQLitePCL.Batteries.Init().'
             //Call this for create basic xalm
-            //CreateXaml();
+            CreateXaml();
+            
             bool running = true;
             while (running)
             {
@@ -55,17 +56,24 @@ namespace StrangeGt.ForzaMotorsport.Cli
 
         private static void CreateXaml()
         {
-            var properties=typeof(UDPData).GetProperties();
+            var properties = typeof(UDPData).GetProperties();
             string tpl = @"<StackLayout Orientation=""Horizontal"">
 < Label Text=""{0}:"" FontSize=""Small"" />
-<Label Text=""{{Binding Item.{0}}}"" FontSize=""Micro""/>
+<Label Text=""{{Binding Item.{0},StringFormat='{{0,20:{1}}}'}}"" FontSize=""Micro""/>
 </StackLayout>
 ";
-              string xaml = "";
-         foreach(PropertyInfo pi in properties){
-                xaml += string.Format(tpl, pi.Name);
+            string xaml = @"<StackLayout Spacing=""20"" Padding=""15"">";
+            foreach (PropertyInfo pi in properties)
+            {
+                xaml += string.Format(tpl, pi.Name, GetFormat(pi));
             }
-         }
+            xaml += "</StackLayout>";
+        }
+
+        private static object GetFormat(PropertyInfo pi)
+        {
+          return  pi.PropertyType == typeof(Single) ? "F11" : "N0";
+        }
 
         private static void CreateDB(string databasePath)
         {
