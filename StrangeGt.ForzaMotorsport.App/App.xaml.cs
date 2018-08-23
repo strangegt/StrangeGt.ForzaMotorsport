@@ -2,6 +2,7 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using StrangeGt.ForzaMotorsport.App.Views;
+using System.Security;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace StrangeGt.ForzaMotorsport.App
@@ -9,7 +10,7 @@ namespace StrangeGt.ForzaMotorsport.App
     public partial class App : Application
     {
 
-        public App()
+         public App()
         {
             InitializeComponent();
 

@@ -10,10 +10,8 @@ namespace StrangeGt.ForzaMotorsport.Cli
 {
     class Program
     {
-        private static bool listening;
-        private static Task listeningTask;
-        private static CancellationTokenSource tokenSource;
         private static ForzaMotorsportContext context;
+        private static UDPListener listener;
 
         static void Main(string[] args)
         {
@@ -95,8 +93,10 @@ namespace StrangeGt.ForzaMotorsport.Cli
 
         private static void StopListener()
         {
-            tokenSource.Cancel();
-            listening = false;
+           if (listener != null)
+            {
+                listener.StopListener();
+            }
         }
 
         private static void WriteMenu()
@@ -107,35 +107,24 @@ namespace StrangeGt.ForzaMotorsport.Cli
 
         private static bool IsListening()
         {
-            return listening;
+            return listener.IsListening;
         }
 
         private static void StartListener()
         {
-
             Console.Clear();
-            listening = true;
-            tokenSource = new CancellationTokenSource();
-            CancellationToken cancellationToken = tokenSource.Token;
-            cancellationToken.Register(() =>
+            CreateDB(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "StrangeGt.ForzaMotorsport", "databases", string.Format("Forzamotorsport_{0:yyyyMMddHHmmss}.sqlite", DateTime.Now.ToUniversalTime())));
+            if (listener == null)
             {
-
-            });
-            listeningTask = Task.Run(() =>
-            {
-                CreateDB(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "StrangeGt.ForzaMotorsport", "databases", string.Format("Forzamotorsport_{0:yyyyMMddHHmmss}.sqlite", DateTime.Now.ToUniversalTime())));
-
-                UDPListener listener = new UDPListener();
-                listener.StartListenerAsync(new Action<UDPDataEventArgs>(UDPDataHandler), cancellationToken).GetAwaiter().GetResult(); ;
-                listening = false;
-                // CloseDB();
-
-            }, cancellationToken);
+                listener = new UDPListener();
+                listener.OnReceive += Listener_OnReceive;
+            }
+            listener.StartListener();
         }
 
-        private static void UDPDataHandler(UDPDataEventArgs args)
+        private static void Listener_OnReceive(object sender, ReceiveEventArgs e)
         {
-            UDPData data = args.UdpReceiveResult.Buffer.Deserialize<UDPData>();
+            UDPData data = e.UdpReceiveResult.Buffer.Deserialize<UDPData>();
             WriteData(data);
         }
         private static void WriteData(UDPData data)

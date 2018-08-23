@@ -3,10 +3,10 @@ using System.Net.Sockets;
 
 namespace StrangeGt.ForzaMotorsport.Listener
 {
-    public class UDPDataEventArgs : EventArgs
+    public class ReceiveEventArgs : EventArgs
     {
       
-        public UDPDataEventArgs(UdpReceiveResult resul)
+        public ReceiveEventArgs(UdpReceiveResult resul):base()
         {
             this.UdpReceiveResult = resul;
         }

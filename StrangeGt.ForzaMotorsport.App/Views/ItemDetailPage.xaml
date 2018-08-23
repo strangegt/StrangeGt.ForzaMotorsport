@@ -2,16 +2,22 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 x:Class="StrangeGt.ForzaMotorsport.App.Views.ItemDetailPage"
+xmlns:vm="clr-namespace:StrangeGt.ForzaMotorsport.App.ViewModels"
+       
 Title="{Binding Title}">
+    <ContentPage.BindingContext>
+        <vm:ItemDetailViewModel />
+    </ContentPage.BindingContext>
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Start" Clicked="ToolbarItem_Clicked">
+        
+        <ToolbarItem Text="Start" Command="{Binding StartListener}" CommandParameter="">
             <ToolbarItem.Icon>
                 <OnPlatform x:TypeArguments="FileImageSource">
-                    <On Platform="UWP" Value="add.png"/>
+                    <On Platform="UWP" Value="start.png"/>
                 </OnPlatform>
             </ToolbarItem.Icon>
         </ToolbarItem>
-        <ToolbarItem Text="Stop" Clicked="ToolbarItem_Clicked_1">
+        <ToolbarItem Text="Stop" Command="{Binding StopListener}" CommandParameter="">
             <ToolbarItem.Icon>
                 <OnPlatform x:TypeArguments="FileImageSource">
                     <On Platform="UWP" Value="stop.png"/>

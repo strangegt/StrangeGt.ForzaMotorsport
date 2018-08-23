@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Net.NetworkInformation;
 using System.Windows.Input;
 
 using Xamarin.Forms;
@@ -11,9 +12,27 @@ namespace StrangeGt.ForzaMotorsport.App.ViewModels
         {
             Title = "About";
 
-            OpenWebCommand = new Command(() => Device.OpenUri(new Uri("https://xamarin.com/platform")));
         }
-
+        public string IpAdress
+        {
+            get
+            {
+                foreach (NetworkInterface ni in NetworkInterface.GetAllNetworkInterfaces())
+                {
+                    if (ni.NetworkInterfaceType == NetworkInterfaceType.Wireless80211 || ni.NetworkInterfaceType == NetworkInterfaceType.Ethernet)
+                    {
+                        foreach (UnicastIPAddressInformation ip in ni.GetIPProperties().UnicastAddresses)
+                        {
+                            if (ip.Address.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork)
+                            {
+                                return ip.Address.ToString();
+                            }
+                        }
+                    }
+                }
+                return "Desconocida";
+            }
+        }
         public ICommand OpenWebCommand { get; }
     }
 }
